@@ -13,7 +13,7 @@ form.addEventListener("submit", (e) =>{
     const valueS = input.value.trim();
     if(!valueS) return;
 
-    getData(`http://www.omdbapi.com/?s=${valueS}&apikey=44052ded`);
+    getData(`https://www.omdbapi.com/?s=${valueS}&apikey=44052ded`);
 })
 
 cards.addEventListener("click", (e) =>{
@@ -43,7 +43,7 @@ function showData(data) {
 }
 
 function movie(id){
-    fetch.get(`http://www.omdbapi.com/?i=${id}&apikey=44052ded`).then((res) =>{
+    axios.get(`https://www.omdbapi.com/?i=${id}&apikey=44052ded`).then((res) =>{
         console.log("Movie details:", res.data);
         
     })
