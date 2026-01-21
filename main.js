@@ -43,7 +43,7 @@ function showData(data) {
 }
 
 function movie(id){
-    axios.get(`http://www.omdbapi.com/?i=${id}&apikey=44052ded`).then((res) =>{
+    fetch.get(`http://www.omdbapi.com/?i=${id}&apikey=44052ded`).then((res) =>{
         console.log("Movie details:", res.data);
         
     })
