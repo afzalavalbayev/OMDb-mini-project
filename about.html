@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>OMDb website</title>
+    <title>About movie</title>
 </head>
 <body>
-
     <div class="container">
         <form id="form">
-            <input type="text" id="movie" placeholder="Search for a movie..."> 
+            <div class="home">
+            <button class="btn_home"><a class="home_a" href="index.html">Home</a></button></div>
+            <input type="text" id="movie" placeholder="Search for a movie...">
             <button type="submit" id="button">Search</button>
         </form>
 
-        <div class="cards"></div>
-    </div>
+        <main class="main"></main>
+        </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="main.js" defer></script>
+        <script src="about.js"></script>
 </body>
 </html>

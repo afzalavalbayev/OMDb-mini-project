@@ -1,6 +1,7 @@
 const form = document.querySelector("#form");
 const input = document.querySelector("#movie");
 const cards = document.querySelector(".cards");
+const card = document.querySelector(".card");
 
 function getData(url){
     axios.get(url).then((res) => {
@@ -16,12 +17,13 @@ form.addEventListener("submit", (e) =>{
     getData(`https://www.omdbapi.com/?s=${valueS}&apikey=44052ded`);
 })
 
+
 cards.addEventListener("click", (e) =>{
     const card = e.target.closest(".card");
     if(!card) return;
 
-    const imdbID = card.dateset.id;
-    showOneMovie(imdbID);
+    const imdbID = card.dataset.id;
+    movie(imdbID);
 })
 
 function showData(data) {
@@ -43,8 +45,10 @@ function showData(data) {
 }
 
 function movie(id){
-    axios.get(`https://www.omdbapi.com/?i=${id}&apikey=44052ded`).then((res) =>{
-        console.log("Movie details:", res.data);
+        axios.get(`https://www.omdbapi.com/?i=${id}&apikey=44052ded`).then((res) =>{
+        window.location.href = "about.html";
+        localStorage.setItem("movie", JSON.stringify(res.data))
+    
         
     })
 }
